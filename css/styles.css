@@ -49,7 +49,8 @@ img {
   padding-top: 94px;
 }
 .page-header {
-  border-bottom: 1px;
+  border-bottom: 1px solid #ECECEC;
+
 }
 .header-container {
   display: flex;
@@ -83,6 +84,7 @@ img {
 }
 .header-list-item {
   margin-right: 50px;
+  
 }
 .header-list-link {
   position: relative;
@@ -98,11 +100,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link.current::after {
+.current::after {
   content: "";
 
   position: absolute;
@@ -110,7 +111,7 @@ img {
   bottom: 0px;
 
   display: block;
-  background-color: var (--active-color);
+ border-bottom: 4px solid var(--active-color);
   border-radius: 2px;
   width: 100%;
   height: 4px;
@@ -191,10 +192,17 @@ img {
 }
 
 .modal-button {
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
   border: none;
   background: #ffffff;
+  top: 0;
+}
 
+.about {
+  padding-bottom: 0px;
 }
 
 .list-about {
@@ -204,15 +212,25 @@ img {
   margin-right: 30px;
 }
 
-.section-work {
-  padding-top: 0;
+.p-about {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: var(--text-color);
+  margin-top: 10px;
 }
+
 .h3-about {
   padding: 0;
   font-size: 14px;
   line-height: calc(16 / 14);
   text-transform: uppercase;
 }
+
+.section-work {
+  padding-top: 0;
+}
+
 .work {
   display: flex;
   gap: 30px;
@@ -228,14 +246,16 @@ img {
 .work-p {
   position: absolute;
   bottom: 0;
+  height: 70px;
 
-  padding: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-weight: 700;
   font-size: 14px;
   line-height: calc(16 / 14);
 
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   background: rgba(47, 48, 58, 0.8);
@@ -264,13 +284,7 @@ img {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.p-about {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: calc(24 / 14);
-  color: var(--text-color);
-  margin-top: 10px;
-}
+
 .h-main {
   font-weight: 700;
   font-size: 36px;
@@ -607,6 +621,8 @@ address {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -617,7 +633,8 @@ address {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   min-width: 528px;
   min-height: 581px;
